@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="@dimen/margin_padding_size_small">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/errorIndicator"
+            app:layout_constraintBottom_toTopOf="@+id/errorRetryButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias=".4"
+            android:layout_width="@dimen/dimen_error_image"
+            android:layout_height="@dimen/dimen_error_image"
+            android:contentDescription="@string/error_something_went_wrong"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_sad" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/errorTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/errorIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_padding_size_large"
+            android:text="@string/error_something_went_wrong"
+            android:textSize="@dimen/text_size_large" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/errorRetryButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:cornerRadius="@dimen/margin_padding_size_micro"
+            app:layout_constraintTop_toBottomOf="@id/errorTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_default"
+            android:text="@string/action_retry"
+            android:textAllCaps="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

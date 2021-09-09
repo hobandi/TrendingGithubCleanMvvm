@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="builtByModel"
+            type="pl.app.inteo.presentation.model.BuiltByUiModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_padding_size_small">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/built_by_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_padding_size_micro"
+            app:layout_constraintBottom_toBottomOf="@id/built_by_image"
+            app:layout_constraintEnd_toStartOf="@id/built_by_image"
+            app:layout_constraintTop_toTopOf="@id/built_by_image"
+            app:setTextOrHideIfEmpty="@{builtByModel.username}" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/built_by_image"
+            android:layout_width="@dimen/detail_build_by_image_size"
+            android:layout_height="@dimen/detail_build_by_image_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadImageUrl="@{builtByModel.avatar}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

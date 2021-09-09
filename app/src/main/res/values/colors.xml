@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray_status_bar">@color/black</color>
+    <color name="bottom_nav_and_toolbar">#24292f</color>
+    <color name="gray">#CDCDCD</color>
+    <color name="gray_place_holder">#DDDDDD</color>
+    <color name="gray_dark">#FF595959</color>
+    <color name="gray_very_dark">#FF3A3A3A</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="very_light_blue">#eef0f2</color>
+    <color name="blue">#0969e1</color>
+    <color name="dark_blue">#232f34</color>
+    <color name="color_background">#E8ECEB</color>
+    <color name="color_background_dark">#24292E</color>
+    <color name="color_card_view_dark">#3B3E43</color>
+    <color name="color_text">#30353A</color>
+    <color name="white_alpha_060">#99ffffff</color>
+    <color name="bottom_bar_background">@color/black</color>
+    <color name="bottom_bar_text">@color/white</color>
+    <color name="image_icon_colors">@color/black</color>
+</resources>

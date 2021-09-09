@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/trendingList">
+    <fragment
+        android:id="@+id/trendingList"
+        android:name="pl.app.inteo.list.TrendingRepositoriesFragment"
+        android:label="trendingList">
+        <argument
+            android:name="bookmarkedList"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_trendingList_to_trendingDetail"
+            app:destination="@id/trendingDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/trendingDetail"
+        android:name="pl.app.inteo.detail.TrendingRepositoryDetailFragment"
+        android:label="trendingDetail">
+        <argument
+            android:name="repository_name"
+            app:argType="string" />
+        <argument
+            android:name="repositoriesType"
+            app:argType="pl.app.inteo.presentation.model.RepositoriesTypeUiModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarked"
+        android:name="pl.app.inteo.list.TrendingRepositoriesFragment"
+        android:label="favorite">
+        <argument
+            android:name="bookmarkedList"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/action_trendingList_to_trendingDetail"
+            app:destination="@id/trendingDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings"
+        android:name="pl.app.inteo.settings.SettingsFragment"
+        android:label="settings" />
+
+    <action
+        android:id="@+id/action_trendingList"
+        app:destination="@+id/trendingList"
+        app:launchSingleTop="true"
+        app:popUpTo="@+id/main_navigation"
+        app:popUpToInclusive="true" />
+</navigation>

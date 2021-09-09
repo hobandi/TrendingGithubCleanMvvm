@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuGroupRepositorySinceType"
+        android:icon="@drawable/ic_type_list"
+        android:title="@string/menu_list_type">
+        <menu>
+            <item
+                android:id="@+id/menu_today"
+                android:title="@string/menu_list_type_today" />
+            <item
+                android:id="@+id/menu_week"
+                android:title="@string/menu_list_type_week" />
+            <item
+                android:id="@+id/menu_month"
+                android:title="@string/menu_list_type_month" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menuGroupSortingType"
+        android:icon="@drawable/ic_sort"
+        android:title="@string/menu_sort">
+        <menu>
+            <item
+                android:id="@+id/menu_sort_turn_off"
+                android:title="@string/menu_sort_off" />
+            <item
+                android:id="@+id/menu_sort_total_stars"
+                android:title="@string/menu_sort_stars_total" />
+            <item
+                android:id="@+id/menu_sort_stars_since"
+                android:title="@string/menu_sort_stars_since" />
+            <item
+                android:id="@+id/menu_sort_fork"
+                android:title="@string/menu_sort_forks" />
+        </menu>
+    </item>
+</menu>

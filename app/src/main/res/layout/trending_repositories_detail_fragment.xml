@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="repository"
+            type="pl.app.inteo.presentation.model.RepositoryUiModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:colorBackground"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingHorizontal="@dimen/grid_0_5"
+            android:paddingTop="@dimen/grid_1">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/email_card_view"
+                style="@style/CardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:transitionName="@string/detail_transition_name">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/bookmark"
+                        android:layout_width="@dimen/dimen_repositories_detail_bookmark_icon_size"
+                        android:layout_height="@dimen/dimen_repositories_detail_bookmark_icon_size"
+                        android:src="@drawable/ic_bookmark_selector"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_user_name"
+                        android:textSize="@dimen/text_size_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/userName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/userName" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_size_xlarge"
+                        app:layout_constraintStart_toEndOf="@id/userNameLabel"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:setTextOrHideIfEmpty="@{repository.username}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/repositoryNameLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_repository"
+                        android:textSize="@dimen/text_size_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/repositoryName"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/repositoryName" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/repositoryName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/text_size_xlarge"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/repositoryNameLabel"
+                        app:layout_constraintTop_toBottomOf="@id/userName"
+                        app:setTextOrHideIfEmpty="@{repository.repositoryName}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/description"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:layout_marginBottom="@dimen/margin_padding_size_small"
+                        android:gravity="center"
+                        android:textSize="@dimen/text_size_large"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/repositoryName"
+                        app:setTextOrHideIfEmpty="@{repository.description}" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/openRepository"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:text="@string/button_open_repository"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/description" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/technologyLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_technology"
+                        android:textSize="@dimen/text_size_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/technology"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/technology" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/technology"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_small"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_large"
+                        app:layout_constraintStart_toEndOf="@id/technologyLabel"
+                        app:layout_constraintTop_toBottomOf="@id/openRepository"
+                        app:setTextOrHideIfEmpty="@{repository.technology}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/totalStarLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_total_stars"
+                        android:textSize="@dimen/text_size_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/starImage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/starImage" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/starImage"
+                        android:layout_width="@dimen/dimen_repositories_detail_icon_size"
+                        android:layout_height="@dimen/dimen_repositories_detail_icon_size"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:src="@drawable/ic_star_thin"
+                        android:tint="@color/image_icon_colors"
+                        app:layout_constraintStart_toEndOf="@id/totalStarLabel"
+                        app:layout_constraintTop_toBottomOf="@id/technology" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/starCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_large"
+                        app:layout_constraintBottom_toBottomOf="@id/starImage"
+                        app:layout_constraintStart_toEndOf="@id/starImage"
+                        app:layout_constraintTop_toTopOf="@id/starImage"
+                        app:setTextOrHideIfEmpty="@{repository.totalStars}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/totalForkLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_total_fork"
+                        android:textSize="@dimen/text_size_medium"
+                        app:layout_constraintBottom_toBottomOf="@id/forkImage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/forkImage" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/forkImage"
+                        android:layout_width="@dimen/dimen_repositories_detail_icon_size"
+                        android:layout_height="@dimen/dimen_repositories_detail_icon_size"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:src="@drawable/ic_fork"
+                        android:tint="@color/image_icon_colors"
+                        app:layout_constraintStart_toEndOf="@id/totalForkLabel"
+                        app:layout_constraintTop_toBottomOf="@id/starImage" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/forkCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_large"
+                        app:layout_constraintBottom_toBottomOf="@id/forkImage"
+                        app:layout_constraintStart_toEndOf="@id/forkImage"
+                        app:layout_constraintTop_toTopOf="@id/forkImage"
+                        app:setTextOrHideIfEmpty="@{repository.forks}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/startSinceLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:gravity="center_vertical"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/startSinceImage"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/startSinceImage"
+                        app:setTextRepositoriesTypeUiModel="@{repository.repositoryTypeUiModel}" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/startSinceImage"
+                        android:layout_width="@dimen/dimen_repositories_detail_icon_size"
+                        android:layout_height="@dimen/dimen_repositories_detail_icon_size"
+                        android:layout_marginStart="@dimen/margin_padding_size_small"
+                        android:src="@drawable/ic_star_tick"
+                        android:tint="@color/image_icon_colors"
+                        app:layout_constraintStart_toEndOf="@id/startSinceLabel"
+                        app:layout_constraintTop_toBottomOf="@id/forkImage" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/startSince"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_padding_size_micro"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:gravity="center_vertical"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@id/startSinceImage"
+                        app:layout_constraintStart_toEndOf="@id/startSinceImage"
+                        app:layout_constraintTop_toTopOf="@id/startSinceImage"
+                        app:setTextOrHideIfEmpty="@{repository.starsSince}" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/buildByLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_padding_size_small"
+                        android:layout_marginEnd="@dimen/margin_padding_size_small"
+                        android:gravity="center_vertical"
+                        android:text="@string/label_built_by"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/startSinceImage" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/builtRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/buildByLabel" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.core.widget.NestedScrollView>
+
+        <include
+            android:id="@+id/error"
+            layout="@layout/layout_error_status_notifier"
+            android:visibility="gone" />
+    </FrameLayout>
+</layout>

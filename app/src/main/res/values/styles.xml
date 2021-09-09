@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/dark_blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/gray_dark</item>
+        <item name="colorSecondaryVariant">#00ff00</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:colorBackground">@color/very_light_blue</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="scrimBackground">@color/white_alpha_060</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/gray_status_bar</item>
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/color_background</item>
+        <item name="android:textColor">@color/color_text</item>
+
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface</item>
+        <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
+        <item name="navigationViewStyle">@style/Widget.Reply.NavigationView</item>
+
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Reply.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Reply.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Reply.LargeComponent</item>
+        <item name="chipStyle">@style/Widget.Reply.Chip.Entry</item>
+    </style>
+
+    <style name="CardViewStyle" parent="CardView.Light"></style>
+
+    <style name="Widget.Reply.NavigationView" parent="Widget.MaterialComponents.NavigationView">
+        <!--Remove any scrim insets applied by NavigationView for system bars-->
+        <item name="insetForeground">@android:color/transparent</item>
+        <!--Set the background color of NavigationView-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="elevation">0dp</item>
+        <item name="itemTextAppearance">?attr/textAppearanceBody2</item>
+    </style>
+
+    <style name="Widget.Reply.Chip.Entry" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="closeIconSize">0dp</item>
+        <item name="closeIconEnabled">false</item>
+        <item name="chipStartPadding">0dp</item>
+        <item name="android:checkable">false</item>
+    </style>
+
+</resources>
